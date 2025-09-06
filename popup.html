@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromium Plugin</title>
+    <style>
+        body {
+            width: 350px;
+            height: 500px;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            padding: 20px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        .button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+        .status {
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+        .error {
+            background: rgba(220, 53, 69, 0.2);
+            border: 1px solid rgba(220, 53, 69, 0.5);
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid rgba(40, 167, 69, 0.5);
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 Chromium Plugin</h1>
+            <div class="status">v1.0.0 - 测试版本</div>
+        </div>
+        
+        <div class="content">
+            <h3>简历解析</h3>
+            <input type="file" id="pdfFile" accept=".pdf" style="position: absolute; left: -9999px; opacity: 0;">
+            <button class="button" id="selectPDFBtn">📄 选择PDF简历</button>
+            <button class="button" id="selectPDFDynamicBtn" style="background: rgba(255, 193, 7, 0.8);">📄 选择PDF简历 (备用方法)</button>
+            <div id="resumeInfo" style="display: none; margin-top: 10px;">
+                <h4>提取的信息：</h4>
+                <div id="extractedInfo"></div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <h3>快速操作</h3>
+            <button class="button" id="highlightBtn">🔍 高亮文本</button>
+            <button class="button" id="extractBtn">📊 提取数据</button>
+            <button class="button" id="screenshotBtn">📷 截图</button>
+            <button class="button" id="analyzeBtn">🔬 页面分析</button>
+        </div>
+        
+        <div class="content">
+            <h3>设置</h3>
+            <button class="button" id="settingsBtn">⚙️ 打开设置</button>
+            <button class="button" id="notificationBtn">🔔 测试通知</button>
+        </div>
+        
+        <div id="status-message" class="status">
+            点击任意按钮测试功能
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

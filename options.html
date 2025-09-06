@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromium Plugin 设置</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="options-container">
+        <!-- 头部 -->
+        <header class="options-header">
+            <div class="header-content">
+                <div class="plugin-logo">
+                    <img src="icons/icon48.png" alt="Plugin Logo" width="40" height="40">
+                </div>
+                <div class="header-info">
+                    <h1>Chromium Plugin 设置</h1>
+                    <p>配置您的插件选项和偏好设置</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主要内容 -->
+        <main class="options-main">
+            <!-- 导航侧边栏 -->
+            <nav class="options-nav">
+                <ul class="nav-list">
+                    <li class="nav-item active" data-tab="general">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">常规设置</span>
+                    </li>
+                    <li class="nav-item" data-tab="features">
+                        <span class="nav-icon">🔧</span>
+                        <span class="nav-text">功能设置</span>
+                    </li>
+                    <li class="nav-item" data-tab="appearance">
+                        <span class="nav-icon">🎨</span>
+                        <span class="nav-text">外观设置</span>
+                    </li>
+                    <li class="nav-item" data-tab="privacy">
+                        <span class="nav-icon">🔒</span>
+                        <span class="nav-text">隐私设置</span>
+                    </li>
+                    <li class="nav-item" data-tab="advanced">
+                        <span class="nav-icon">⚡</span>
+                        <span class="nav-text">高级设置</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 设置内容区域 -->
+            <div class="options-content">
+                <!-- 常规设置 -->
+                <div class="tab-content active" id="general">
+                    <div class="settings-section">
+                        <h2>常规设置</h2>
+                        <div class="setting-group">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>启用插件</h3>
+                                    <p>控制插件是否在浏览器中运行</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="enable-plugin" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>自动启动</h3>
+                                    <p>浏览器启动时自动激活插件功能</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="auto-start">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>显示通知</h3>
+                                    <p>在操作完成时显示桌面通知</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="show-notifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>数据收集</h3>
+                                    <p>允许收集匿名使用数据以改进插件</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="data-collection">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 功能设置 -->
+                <div class="tab-content" id="features">
+                    <div class="settings-section">
+                        <h2>功能设置</h2>
+                        <div class="setting-group">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>高亮功能</h3>
+                                    <p>启用页面文本高亮功能</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="enable-highlight" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>数据提取</h3>
+                                    <p>启用页面数据提取功能</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="enable-extract" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>截图功能</h3>
+                                    <p>启用页面截图功能</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="enable-screenshot" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>页面分析</h3>
+                                    <p>启用页面结构分析功能</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="enable-analyze" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>右键菜单</h3>
+                                    <p>在右键菜单中显示插件选项</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="enable-context-menu" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 外观设置 -->
+                <div class="tab-content" id="appearance">
+                    <div class="settings-section">
+                        <h2>外观设置</h2>
+                        <div class="setting-group">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>主题模式</h3>
+                                    <p>选择插件的视觉主题</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="theme-select" class="select-input">
+                                        <option value="light">浅色主题</option>
+                                        <option value="dark">深色主题</option>
+                                        <option value="auto">跟随系统</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>工具栏位置</h3>
+                                    <p>选择工具栏在页面中的显示位置</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="toolbar-position" class="select-input">
+                                        <option value="top-right">右上角</option>
+                                        <option value="top-left">左上角</option>
+                                        <option value="bottom-right">右下角</option>
+                                        <option value="bottom-left">左下角</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>工具栏透明度</h3>
+                                    <p>调整工具栏的透明度级别</p>
+                                </div>
+                                <div class="setting-control">
+                                    <input type="range" id="toolbar-opacity" min="0.1" max="1" step="0.1" value="0.9" class="range-input">
+                                    <span class="range-value">90%</span>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>动画效果</h3>
+                                    <p>启用界面动画和过渡效果</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="enable-animations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 隐私设置 -->
+                <div class="tab-content" id="privacy">
+                    <div class="settings-section">
+                        <h2>隐私设置</h2>
+                        <div class="setting-group">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>数据存储</h3>
+                                    <p>选择数据存储方式</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="storage-type" class="select-input">
+                                        <option value="local">本地存储</option>
+                                        <option value="sync">同步存储</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>数据保留时间</h3>
+                                    <p>设置数据在本地保留的时间</p>
+                                </div>
+                                <div class="setting-control">
+                                    <select id="data-retention" class="select-input">
+                                        <option value="1">1天</option>
+                                        <option value="7">7天</option>
+                                        <option value="30">30天</option>
+                                        <option value="90">90天</option>
+                                        <option value="0">永久保留</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>清除数据</h3>
+                                    <p>清除所有存储的插件数据</p>
+                                </div>
+                                <div class="setting-control">
+                                    <button id="clear-data-btn" class="danger-btn">清除数据</button>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>导出数据</h3>
+                                    <p>导出插件设置和数据</p>
+                                </div>
+                                <div class="setting-control">
+                                    <button id="export-data-btn" class="secondary-btn">导出数据</button>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>导入数据</h3>
+                                    <p>从文件导入插件设置和数据</p>
+                                </div>
+                                <div class="setting-control">
+                                    <input type="file" id="import-data-input" accept=".json" style="display: none;">
+                                    <button id="import-data-btn" class="secondary-btn">导入数据</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 高级设置 -->
+                <div class="tab-content" id="advanced">
+                    <div class="settings-section">
+                        <h2>高级设置</h2>
+                        <div class="setting-group">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>调试模式</h3>
+                                    <p>启用详细的控制台日志输出</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="debug-mode">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>性能监控</h3>
+                                    <p>监控插件性能指标</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="performance-monitoring">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>更新检查</h3>
+                                    <p>自动检查插件更新</p>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="auto-update" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h3>重置设置</h3>
+                                    <p>将所有设置恢复为默认值</p>
+                                </div>
+                                <div class="setting-control">
+                                    <button id="reset-settings-btn" class="danger-btn">重置设置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部操作栏 -->
+        <footer class="options-footer">
+            <div class="footer-actions">
+                <button id="save-btn" class="primary-btn">保存设置</button>
+                <button id="cancel-btn" class="secondary-btn">取消</button>
+                <button id="reset-btn" class="danger-btn">重置</button>
+            </div>
+            <div class="footer-info">
+                <span>设置将自动保存到浏览器存储中</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 确认对话框 -->
+    <div id="confirm-dialog" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="confirm-title">确认操作</h3>
+                <button id="confirm-close" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="confirm-message">确定要执行此操作吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-cancel" class="modal-btn secondary">取消</button>
+                <button id="confirm-ok" class="modal-btn primary">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通知 -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <span class="notification-icon">ℹ️</span>
+            <span class="notification-text">通知内容</span>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
